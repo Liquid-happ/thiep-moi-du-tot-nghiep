@@ -3,12 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Lễ Tốt Nghiệp | Quýt 🍊</title>
-    <!-- Thư viện hiệu ứng AOS -->
+    <title> Thư mời Lễ Tốt Nghiệp | Quýt 🍊</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-    <!-- Thư viện Icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;600&family=Pacifico&display=swap" rel="stylesheet">
     
     <style>
@@ -16,26 +13,17 @@
         body, html { margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; background-color: #fdfdfd; color: #333; overflow-x: hidden; }
         h1, h2, h3 { font-family: 'Playfair Display', serif; color: #1e3c72; }
 
-        /* ====== BOOT SCREEN CHUẨN CODER CHUYÊN NGHIỆP ====== */
+        /* ====== BOOT SCREEN CHUẨN CODER ====== */
         #boot-screen {
             position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: #0c0c0c; 
-            color: #00ff41; /* Màu xanh lá Hacker */
-            font-family: 'Consolas', 'Courier New', monospace; z-index: 9999; 
-            display: flex; justify-content: center; align-items: center; /* Đẩy ra giữa màn hình */
-            transition: opacity 0.5s ease;
+            color: #00ff41; font-family: 'Consolas', 'Courier New', monospace; z-index: 9999; 
+            display: flex; justify-content: center; align-items: center; transition: opacity 0.5s ease;
         }
-        #logs-container {
-            width: 90%; max-width: 900px; /* Tràn rộng ra */
-            text-align: left;
-            font-size: clamp(1rem, 3vw, 1.3rem); /* Chữ to rõ ràng */
-            line-height: 1.8;
-            text-shadow: 0 0 5px rgba(0, 255, 65, 0.4); /* Phát sáng nhẹ */
-        }
+        #logs-container { width: 90%; max-width: 900px; text-align: left; font-size: clamp(1rem, 3vw, 1.3rem); line-height: 1.8; text-shadow: 0 0 5px rgba(0, 255, 65, 0.4); }
         .log-line { margin: 5px 0; }
         .blinking-cursor {
             display: inline-block; width: 12px; height: 1.1em; background-color: #00ff41;
-            vertical-align: middle; animation: blink 1s step-end infinite; margin-left: 5px;
-            box-shadow: 0 0 8px #00ff41;
+            vertical-align: middle; animation: blink 1s step-end infinite; margin-left: 5px; box-shadow: 0 0 8px #00ff41;
         }
         @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
@@ -61,19 +49,10 @@
         .btn-open:hover { transform: translateY(-8px) scale(1.05); }
 
         /* ====== MŨI TÊN CUỘN TRANG ====== */
-        .scroll-indicator {
-            position: absolute; bottom: 25px; left: 50%; transform: translateX(-50%);
-            font-size: 2rem; color: white; animation: bounce 2s infinite; cursor: pointer;
-            z-index: 10; opacity: 0.8; transition: 0.3s ease;
-        }
+        .scroll-indicator { position: absolute; bottom: 25px; left: 50%; transform: translateX(-50%); font-size: 2rem; color: white; animation: bounce 2s infinite; cursor: pointer; z-index: 10; opacity: 0.8; transition: 0.3s ease; }
         .scroll-indicator:hover { opacity: 1; transform: translateX(-50%) scale(1.2); }
         .scroll-indicator.dark { color: #ff7e5f; bottom: 15px; } 
-        
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
-            40% { transform: translateY(-15px) translateX(-50%); }
-            60% { transform: translateY(-7px) translateX(-50%); }
-        }
+        @keyframes bounce { 0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); } 40% { transform: translateY(-15px) translateX(-50%); } 60% { transform: translateY(-7px) translateX(-50%); } }
 
         /* ====== CÁC SECTION CHUNG ====== */
         section { padding: 80px 20px; text-align: center; position: relative; }
@@ -84,43 +63,43 @@
             max-width: 720px; margin: 0 auto; background: #fffdf9; padding: 60px 45px; border-radius: 20px;
             box-shadow: 0 20px 60px rgba(0,0,0,0.1); border-top: 8px solid #ff7e5f; position: relative; text-align: left;
         }
-        .letter-container::before {
-            content: '💌'; position: absolute; top: -35px; left: 50%; transform: translateX(-50%); font-size: 60px;
-        }
+        .letter-container::before { content: '💌'; position: absolute; top: -35px; left: 50%; transform: translateX(-50%); font-size: 60px; }
         .letter-content p { font-size: 1.15rem; line-height: 1.9; color: #444; margin-bottom: 20px; }
 
-        /* ====== ALBUM ẢNH POLAROID (HÀNH TRÌNH) ====== */
+        /* ====== ALBUM ẢNH POLAROID TƯƠNG TÁC ====== */
         .timeline-bg { background: #fdfbfb; overflow: hidden; padding-bottom: 100px; } 
-        .timeline-wrapper {
-            display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; 
-            max-width: 1100px; margin: 40px auto; padding: 20px;
-        }
+        .timeline-wrapper { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; max-width: 1100px; margin: 40px auto; padding: 20px; }
         .polaroid {
             background: white; padding: 15px 15px 25px 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.08);
             width: calc(33.333% - 30px); min-width: 260px; max-width: 320px; border-radius: 4px;
-            transition: all 0.4s ease; cursor: pointer; position: relative;
+            transition: all 0.4s ease; position: relative;
         }
-        .polaroid img { width: 100%; height: 250px; object-fit: cover; border-radius: 2px; filter: contrast(0.95); transition: 0.4s; }
+        
+        /* Chỉnh CSS cho ảnh có thể click */
+        .polaroid-img-wrapper { position: relative; overflow: hidden; border-radius: 2px; cursor: pointer; }
+        .polaroid-img-wrapper img { width: 100%; height: 250px; object-fit: cover; filter: contrast(0.95); transition: opacity 0.3s ease; display: block; }
+        
+        /* Chữ "Bấm đổi ảnh" mờ mờ ở góc */
+        .tap-hint {
+            position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.55); color: white;
+            padding: 4px 10px; border-radius: 12px; font-size: 0.75rem; pointer-events: none;
+            opacity: 0; transition: opacity 0.3s; box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .polaroid:hover .tap-hint { opacity: 1; }
+
         .polaroid-caption { font-family: 'Pacifico', cursive; font-size: 1.5rem; color: #ff7e5f; margin-top: 15px; }
         .polaroid-desc { font-size: 0.95rem; color: #555; margin-top: 5px; line-height: 1.5; padding: 0 10px; }
         
-        /* Hiệu ứng nghiêng tự nhiên của ảnh thật */
         .polaroid:nth-child(odd) { transform: rotate(-3deg); }
         .polaroid:nth-child(even) { transform: rotate(4deg); }
         .polaroid:nth-child(3n) { transform: rotate(-1deg); }
         
-        .polaroid:hover { 
-            transform: rotate(0deg) scale(1.05) translateY(-10px); 
-            box-shadow: 0 25px 45px rgba(0,0,0,0.15); z-index: 10; 
-        }
-        .polaroid:hover img { filter: contrast(1.1); }
+        .polaroid:hover { transform: rotate(0deg) scale(1.05) translateY(-10px); box-shadow: 0 25px 45px rgba(0,0,0,0.15); z-index: 10; }
+        .polaroid:hover .polaroid-img-wrapper img { filter: contrast(1.05); }
 
         /* ====== BẢN ĐỒ & ĐẾM NGƯỢC ====== */
         .countdown { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin: 30px 0; }
-        .time-box {
-            background: linear-gradient(135deg, #ff9a9e, #fecfef); color: #d32f2f; padding: 18px 22px;
-            border-radius: 16px; min-width: 90px; text-align: center; box-shadow: 0 10px 25px rgba(255,154,158,0.4);
-        }
+        .time-box { background: linear-gradient(135deg, #ff9a9e, #fecfef); color: #d32f2f; padding: 18px 22px; border-radius: 16px; min-width: 90px; text-align: center; box-shadow: 0 10px 25px rgba(255,154,158,0.4); }
         .time-box span { display: block; font-size: 2.4rem; font-weight: bold; }
         .time-box small { font-size: 0.8rem; font-weight: 800; text-transform: uppercase; opacity: 0.8; }
         .location-card { background: white; max-width: 800px; margin: 0 auto; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.05); overflow: hidden; text-align: left; }
@@ -130,22 +109,13 @@
         iframe { width: 100%; height: 350px; border: none; display: block; }
 
         /* ====== RSVP ====== */
-        .rsvp-section {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url('hus.png') center/cover fixed;
-            padding: 100px 20px; color: white;
-        }
-        .rsvp-form-container {
-            max-width: 550px; margin: auto; background: rgba(255,255,255,0.15); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.3);
-            border-radius: 24px; padding: 40px; box-shadow: 0 20px 40px rgba(0,0,0,0.4); transition: 0.5s;
-        }
+        .rsvp-section { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url('hus.png') center/cover fixed; padding: 100px 20px; color: white; }
+        .rsvp-form-container { max-width: 550px; margin: auto; background: rgba(255,255,255,0.15); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.3); border-radius: 24px; padding: 40px; box-shadow: 0 20px 40px rgba(0,0,0,0.4); transition: 0.5s; }
         .input-group { position: relative; margin-bottom: 30px; text-align: left; }
-        .input-group input, .input-group select, .input-group textarea {
-            width: 100%; padding: 12px 0; font-size: 1rem; color: white; background: transparent; border: none; border-bottom: 2px solid rgba(255,255,255,0.5); outline: none; transition: 0.3s;
-        }
+        .input-group input, .input-group select, .input-group textarea { width: 100%; padding: 12px 0; font-size: 1rem; color: white; background: transparent; border: none; border-bottom: 2px solid rgba(255,255,255,0.5); outline: none; transition: 0.3s; }
         .input-group input::placeholder, .input-group textarea::placeholder { color: transparent; }
         .input-group label { position: absolute; top: 12px; left: 0; font-size: 1rem; color: rgba(255,255,255,0.9); pointer-events: none; transition: 0.3s ease; }
-        .input-group input:focus ~ label, .input-group input:not(:placeholder-shown) ~ label,
-        .input-group textarea:focus ~ label, .input-group textarea:not(:placeholder-shown) ~ label { top: -15px; font-size: 0.85rem; color: #ffecd2; font-weight: 700; }
+        .input-group input:focus ~ label, .input-group input:not(:placeholder-shown) ~ label, .input-group textarea:focus ~ label, .input-group textarea:not(:placeholder-shown) ~ label { top: -15px; font-size: 0.85rem; color: #ffecd2; font-weight: 700; }
         .input-group select { color: white; background: rgba(0,0,0,0.5); }
         .input-group select option { color: #333; background: white; }
         .btn-submit { width: 100%; padding: 15px; border-radius: 50px; background: #ff7e5f; color: white; border: none; font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: 0.3s; text-transform: uppercase; }
@@ -165,15 +135,14 @@
             .timeline-wrapper::-webkit-scrollbar { display: none; }
             .polaroid { width: 80%; min-width: 260px; flex: 0 0 auto; scroll-snap-align: center; transform: none !important; margin-right: 15px; }
             .polaroid:hover { transform: translateY(-5px) !important; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
-            
+            .tap-hint { opacity: 1; } /* Luôn hiện trên Mobile cho dễ hiểu */
             .letter-container { padding: 40px 20px; }
             .time-box span { font-size: 1.8rem; }
-            #logs-container { font-size: 0.9rem; } /* Chữ nhỏ lại trên điện thoại cho khỏi vỡ dòng */
+            #logs-container { font-size: 0.9rem; }
         }
     </style>
 </head>
 <body>
-    <!-- MÀN HÌNH BOOT MỚI -->
     <div id="boot-screen">
         <div id="logs-container">
             <div id="logs"></div>
@@ -185,10 +154,9 @@
 
     <div id="main-content" style="display: none;">
         
-        <!-- ================= TRANG ĐẦU ================= -->
         <section id="unlock-screen">
             <div id="sparkles-container"></div>
-            <h1 data-aos="zoom-in">Lễ Tốt Nghiệp</h1>
+            <h1 data-aos="zoom-in">Thư mời Lễ Tốt Nghiệp</h1>
             <div class="nickname" data-aos="zoom-in" data-aos-delay="200">Quýt 🍊</div>
             
             <div class="guest-box" data-aos="fade-up" data-aos-delay="400" style="background:rgba(255,255,255,0.6);backdrop-filter:blur(12px);padding:20px 40px;border-radius:50px;margin:20px 0;">
@@ -197,79 +165,106 @@
             </div>
             
             <button class="btn-open" onclick="openInvitation()" data-aos="fade-up" data-aos-delay="600">
-                Mở Thiệp Ngay <i class="fa-solid fa-heart"></i>
+                Mở Thiệp <i class="fa-solid fa-heart"></i>
             </button>
 
             <i class="fa-solid fa-angles-down scroll-indicator" style="display: none;" id="scroll-arrow-1" onclick="scrollNext('invitation')"></i>
         </section>
 
-        <!-- ================= THƯ MỜI ================= -->
         <section id="invitation" data-aos="fade-up">
             <div class="letter-container">
                 <h2 style="text-align:center;color:#ff7e5f;margin-top:0;">Tèn ten! 🍊</h2>
                 <div class="letter-content">
-                    <p>Hành trình thanh xuân với đủ vị chua ngọt của Quýt cuối cùng cũng đến ngày thu hoạch rồi đây!</p>
-                    <p>Từ những đêm thức trắng vò đầu bứt tai gỡ lỗi code, hì hụi hàn từng linh kiện mạch điện, cho đến những phút giây cháy hết mình trên sân cỏ... mọi thăng trầm ấy sẽ chẳng thể nào trọn vẹn nếu thiếu đi sự đồng hành, động viên của bạn.</p>
-                    <p>Cảm ơn vì đã luôn ở bên Quýt. Hãy đến chung vui và chứng kiến khoảnh khắc Quýt chính thức "deploy" thành công phiên bản Cử nhân nhé! Yêu thương rất nhiều! ❤️</p>
-                </div>
-                <div style="text-align:right;margin-top:40px;font-family:'Pacifico',cursive;font-size:2.3rem;color:#ff7e5f;">Quýt 🍊</div>
+                    <p>Đến lúc ngồi viết những dòng này, mình mới nhận ra là quãng đường từ một đứa trẻ vô tư đến ngày sắp mặc lên mình bộ lễ phục tốt nghiệp đã trôi qua nhanh thật.</p>
+                    <p>Nhìn lại, mình thấy bản thân đã trải qua đủ mọi cảm xúc. Có những ngày rất vui vì đạt được điều mình mong muốn, nhưng cũng có những lúc mệt mỏi, áp lực, thất bại và không biết mình có đi đúng hướng hay không. Thật may vì trong suốt chặng đường ấy luôn có mọi người ở bên. Có người động viên mình bằng một lời hỏi thăm, có người lắng nghe mình than vãn, có người âm thầm dõi theo và luôn tin rằng mình sẽ làm được. Những điều tưởng chừng rất nhỏ ấy lại trở thành động lực rất lớn để mình có thể đi đến ngày hôm nay.</p>
+                    <p>Mình thật sự biết ơn vì đã được gặp và đồng hành cùng những người tuyệt vời như mọi người. Cảm ơn vì đã cùng mình đi qua những lúc vui, lúc buồn, những lần thành công và cả những lần vấp ngã. Mỗi người đều đã để lại một dấu ấn rất đẹp trong hành trình trưởng thành của mình.</p>
+					<p>Và giờ đây, khi chuẩn bị khép lại một chặng đường đáng nhớ, mình rất mong mọi người có thể dành chút thời gian đến dự lễ tốt nghiệp của mình. Sự có mặt của mọi người sẽ là niềm vui và là món quà ý nghĩa nhất đối với mình trong ngày đặc biệt này.<p>
+				</div>
+                <div style="text-align:right;margin-top:40px;font-family:'Pacifico',cursive;font-size:2.3rem;color:#ff7e5f;">Dương Bá Quyết 🍊</div>
             </div>
             
             <i class="fa-solid fa-angles-down scroll-indicator dark" onclick="scrollNext('timeline-section')"></i>
         </section>
 
-        <!-- ================= ALBUM POLAROID (HÀNH TRÌNH CHUỖI THỜI GIAN) ================= -->
         <section class="timeline-bg" id="timeline-section">
             <h2 data-aos="fade-up" style="font-size: 2.2rem;">Cuốn Phim Thanh Xuân</h2>
             <p class="section-desc" data-aos="fade-up">Lật giở lại những trang ký ức trưởng thành của Quýt</p>
             
             <div class="timeline-wrapper">
-                <!-- Ảnh 1 -->
+                
                 <div class="polaroid" data-aos="fade-up" data-aos-delay="0">
-                    <img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?w=500" alt="Bé">
+                    <div class="polaroid-img-wrapper" onclick="swapImage(this)">
+                        <div class="tap-hint"><i class="fa-solid fa-hand-pointer"></i> Bấm đổi ảnh</div>
+                        <img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?w=500" 
+                             data-images='["https://images.unsplash.com/photo-1519689680058-324335c77eba?w=500", "https://images.unsplash.com/photo-1471286174890-9c112ffca5b4?w=500"]' 
+                             data-index="0" alt="Bé">
+                    </div>
                     <div class="polaroid-caption">Lém lỉnh</div>
                     <div class="polaroid-desc">Ngày còn bé xíu, một cậu nhóc ngoan ngoãn nhưng mang đầy sự tò mò với thế giới.</div>
                 </div>
-                <!-- Ảnh 2 -->
+
                 <div class="polaroid" data-aos="fade-up" data-aos-delay="100">
-                    <img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?w=500" alt="Lớn hơn">
+                    <div class="polaroid-img-wrapper" onclick="swapImage(this)">
+                        <div class="tap-hint"><i class="fa-solid fa-hand-pointer"></i> Bấm đổi ảnh</div>
+                        <img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?w=500" 
+                             data-images='["https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?w=500", "https://images.unsplash.com/photo-1485546246426-74dc88dec4d9?w=500"]' 
+                             data-index="0" alt="Lớn hơn">
+                    </div>
                     <div class="polaroid-caption">Vô lo vô nghĩ</div>
                     <div class="polaroid-desc">Những chuỗi ngày rong chơi bắt dế, tuổi thơ rộn ràng tiếng cười trong trẻo.</div>
                 </div>
-                <!-- Ảnh 3 -->
+
                 <div class="polaroid" data-aos="fade-up" data-aos-delay="200">
-                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=500" alt="Sân cỏ">
+                    <div class="polaroid-img-wrapper" onclick="swapImage(this)">
+                        <div class="tap-hint"><i class="fa-solid fa-hand-pointer"></i> Bấm đổi ảnh</div>
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=500" 
+                             data-images='["https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=500", "https://images.unsplash.com/photo-1577896851231-70ef18881754?w=500"]' 
+                             data-index="0" alt="Sân cỏ">
+                    </div>
                     <div class="polaroid-caption">Cháy hết mình</div>
                     <div class="polaroid-desc">Thanh xuân rực rỡ! Những chiều xỏ đôi giày Kamito, bứt tốc trên sân cỏ ở vị trí tiền đạo.</div>
                 </div>
-                <!-- Ảnh 4 -->
+
                 <div class="polaroid" data-aos="fade-up" data-aos-delay="300">
-                    <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=500" alt="Bạn bè">
+                    <div class="polaroid-img-wrapper" onclick="swapImage(this)">
+                        <div class="tap-hint"><i class="fa-solid fa-hand-pointer"></i> Bấm đổi ảnh</div>
+                        <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=500" 
+                             data-images='["https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=500", "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500"]' 
+                             data-index="0" alt="Bạn bè">
+                    </div>
                     <div class="polaroid-caption">Đam mê gõ cửa</div>
                     <div class="polaroid-desc">Bắt đầu tập tành với Ubuntu, những dòng code đầu tiên, mở ra một thế giới công nghệ vô tận.</div>
                 </div>
-                <!-- Ảnh 5 -->
+
                 <div class="polaroid" data-aos="fade-up" data-aos-delay="400">
-                    <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=500" alt="Thuyết trình">
+                    <div class="polaroid-img-wrapper" onclick="swapImage(this)">
+                        <div class="tap-hint"><i class="fa-solid fa-hand-pointer"></i> Bấm đổi ảnh</div>
+                        <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=500" 
+                             data-images='["https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=500", "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=500"]' 
+                             data-index="0" alt="Thuyết trình">
+                    </div>
                     <div class="polaroid-caption">Vượt chướng ngại vật</div>
                     <div class="polaroid-desc">Những đêm thức trắng bên mỏ hàn, căng mắt debug mạch ESP32 cho đồ án IoT. Gian nan nhưng vô giá.</div>
                 </div>
-                <!-- Ảnh 6 -->
+
                 <div class="polaroid" data-aos="fade-up" data-aos-delay="500">
-                    <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=500" alt="Tốt nghiệp">
+                    <div class="polaroid-img-wrapper" onclick="swapImage(this)">
+                        <div class="tap-hint"><i class="fa-solid fa-hand-pointer"></i> Bấm đổi ảnh</div>
+                        <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=500" 
+                             data-images='["https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=500", "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=500"]' 
+                             data-index="0" alt="Tốt nghiệp">
+                    </div>
                     <div class="polaroid-caption">Hoàn thành xuất sắc</div>
                     <div class="polaroid-desc">Giây phút tự hào nhất! Chính thức "deploy" thành công phiên bản hoàn thiện của Cử nhân Quýt.</div>
                 </div>
-            </div>
 
+            </div>
             <i class="fa-solid fa-angles-down scroll-indicator dark" onclick="scrollNext('location-section')"></i>
         </section>
 
-        <!-- ================= BẢN ĐỒ & THỜI GIAN ================= -->
         <section id="location-section" data-aos="fade-up">
             <h2 style="font-size: 2.2rem;">Thời Gian & Địa Điểm</h2>
             
-            <!-- Bộ đếm ngược 13:30 -->
             <div class="countdown" id="countdown"></div>
             
             <div class="location-card">
@@ -289,7 +284,6 @@
             <i class="fa-solid fa-angles-down scroll-indicator dark" onclick="scrollNext('rsvp')"></i>
         </section>
 
-        <!-- ================= RSVP ================= -->
         <section class="rsvp-section" id="rsvp">
             <div class="rsvp-form-container" id="form-box" data-aos="zoom-in">
                 <h2 style="color: white; font-size: 2.2rem; margin-top: 0;">Xác Nhận Tham Dự</h2>
@@ -321,7 +315,6 @@
                 </form>
             </div>
 
-            <!-- THẺ VIP -->
             <div id="vip-ticket" class="rsvp-form-container">
                 <h2 style="color: #8b0000; font-family: 'Playfair Display', serif; margin-top: 0;"><i class="fa-solid fa-crown"></i> VÉ VIP <i class="fa-solid fa-crown"></i></h2>
                 <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #8b0000;">Cảm ơn bạn rất nhiều! 🍊</h3>
@@ -330,14 +323,12 @@
             </div>
         </section>
 
-        <!-- NÚT THẢ TIM & NHẠC -->
         <div class="floating-btns" id="floating-btns">
             <button class="action-btn" onclick="spawnHeart()" title="Thả tim"><i class="fa-solid fa-heart" style="color:#e91e63"></i></button>
             <button class="action-btn" id="music-toggle" onclick="toggleMusic()" title="Bật/Tắt Nhạc"><i class="fa-solid fa-music" id="music-icon" style="color:#ff7e5f"></i></button>
         </div>
     </div>
 
-    <!-- SCRIPTS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
@@ -361,6 +352,28 @@
         // 3. HÀM CUỘN TRANG BẰNG MŨI TÊN
         function scrollNext(sectionId) {
             document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // 3.1. HÀM ĐỔI ẢNH KHI BẤM VÀO POLAROID
+        function swapImage(wrapperElement) {
+            // Lấy thẻ img nằm bên trong khung vừa bấm
+            let imgElement = wrapperElement.querySelector('img');
+            
+            // Lấy mảng ảnh từ thuộc tính data-images
+            let images = JSON.parse(imgElement.getAttribute('data-images'));
+            if(images.length <= 1) return; // Nếu chỉ có 1 ảnh thì không cần đổi
+            
+            // Tính toán index ảnh tiếp theo
+            let currentIndex = parseInt(imgElement.getAttribute('data-index'));
+            let nextIndex = (currentIndex + 1) % images.length;
+            
+            // Hiệu ứng mờ nhẹ đi -> đổi ảnh -> sáng lại
+            imgElement.style.opacity = 0;
+            setTimeout(() => {
+                imgElement.src = images[nextIndex];
+                imgElement.setAttribute('data-index', nextIndex);
+                imgElement.style.opacity = 1;
+            }, 300); // 300 mili-giây
         }
 
         // 4. HỆ THỐNG ÂM NHẠC TỪ FILE TRONG MÁY
@@ -419,7 +432,7 @@
 
         // 5. BOOT SCREEN CỰC NGẦU CHO DÂN IT KÈM THÔNG TIN CÁ NHÂN
         const logs = [
-            "quyet@ubuntu:~$ ./build_life_journey.sh",
+            "quyet@duongba:~$ ./build_life_journey.sh",
             "[ OK ] Loading module: Tieu_Hoc_Xuan_Non.sys... Success",
             "[ OK ] Mounting volume: THCS_Thuy_Lam/Memories... Mounted",
             "[ OK ] Decrypting database: THPT_Lien_Ha_Class_A1.2... Verified",
@@ -438,10 +451,9 @@
                 p.innerText = log;
                 logsContainer.appendChild(p);
             }, delay); 
-            delay += 600; // Tốc độ gõ lệnh
+            delay += 800; 
         });
         
-        // Chờ thêm một chút rồi ẩn màn hình boot mượt mà
         setTimeout(() => {
             document.getElementById('boot-screen').style.opacity = '0';
             setTimeout(() => {
