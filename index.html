@@ -68,18 +68,16 @@
 
         /* ====== ALBUM ẢNH POLAROID TƯƠNG TÁC ====== */
         .timeline-bg { background: #fdfbfb; overflow: hidden; padding-bottom: 100px; } 
-        .timeline-wrapper { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; max-width: 1100px; margin: 40px auto; padding: 20px; }
+        .timeline-wrapper { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; max-width: 1000px; margin: 40px auto; padding: 20px; }
         .polaroid {
             background: white; padding: 15px 15px 25px 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-            width: calc(33.333% - 30px); min-width: 260px; max-width: 320px; border-radius: 4px;
+            width: calc(50% - 40px); min-width: 280px; max-width: 400px; border-radius: 4px; /* Chỉnh lại để phù hợp lưới 2x2 */
             transition: all 0.4s ease; position: relative;
         }
         
-        /* Chỉnh CSS cho ảnh có thể click */
         .polaroid-img-wrapper { position: relative; overflow: hidden; border-radius: 2px; cursor: pointer; }
-        .polaroid-img-wrapper img { width: 100%; height: 250px; object-fit: cover; filter: contrast(0.95); transition: opacity 0.3s ease; display: block; }
+        .polaroid-img-wrapper img { width: 100%; height: 260px; object-fit: contain; filter: contrast(0.95); transition: opacity 0.3s ease; display: block; }
         
-        /* Chữ "Bấm đổi ảnh" mờ mờ ở góc */
         .tap-hint {
             position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.55); color: white;
             padding: 4px 10px; border-radius: 12px; font-size: 0.75rem; pointer-events: none;
@@ -90,9 +88,10 @@
         .polaroid-caption { font-family: 'Pacifico', cursive; font-size: 1.5rem; color: #ff7e5f; margin-top: 15px; }
         .polaroid-desc { font-size: 0.95rem; color: #555; margin-top: 5px; line-height: 1.5; padding: 0 10px; }
         
-        .polaroid:nth-child(odd) { transform: rotate(-3deg); }
-        .polaroid:nth-child(even) { transform: rotate(4deg); }
-        .polaroid:nth-child(3n) { transform: rotate(-1deg); }
+        .polaroid:nth-child(1) { transform: rotate(-3deg); }
+        .polaroid:nth-child(2) { transform: rotate(4deg); }
+        .polaroid:nth-child(3) { transform: rotate(2deg); }
+        .polaroid:nth-child(4) { transform: rotate(-2deg); }
         
         .polaroid:hover { transform: rotate(0deg) scale(1.05) translateY(-10px); box-shadow: 0 25px 45px rgba(0,0,0,0.15); z-index: 10; }
         .polaroid:hover .polaroid-img-wrapper img { filter: contrast(1.05); }
@@ -121,7 +120,11 @@
         .btn-submit { width: 100%; padding: 15px; border-radius: 50px; background: #ff7e5f; color: white; border: none; font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: 0.3s; text-transform: uppercase; }
         .btn-submit:hover { background: #feb47b; transform: translateY(-3px); }
 
+        /* Thẻ VIP (Khi đồng ý) */
         #vip-ticket { display: none; background: linear-gradient(135deg, #d4af37, #ffdf00); color: #8b0000; padding: 30px; text-align: center; border: 2px dashed #8b0000; animation: glow 2s ease-in-out infinite alternate; }
+        
+        /* Thẻ Tiếc Nuối (Khi bận) */
+        #busy-ticket { display: none; background: rgba(255, 255, 255, 0.95); color: #333; padding: 35px; text-align: center; border: 2px dashed #ff7e5f; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
 
         /* ====== NÚT NỔI ====== */
         .floating-btns { position: fixed; bottom: 25px; right: 25px; z-index: 1000; display: none; flex-direction: column; gap: 12px; }
@@ -135,7 +138,7 @@
             .timeline-wrapper::-webkit-scrollbar { display: none; }
             .polaroid { width: 80%; min-width: 260px; flex: 0 0 auto; scroll-snap-align: center; transform: none !important; margin-right: 15px; }
             .polaroid:hover { transform: translateY(-5px) !important; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
-            .tap-hint { opacity: 1; } /* Luôn hiện trên Mobile cho dễ hiểu */
+            .tap-hint { opacity: 1; } 
             .letter-container { padding: 40px 20px; }
             .time-box span { font-size: 1.8rem; }
             #logs-container { font-size: 0.9rem; }
@@ -156,7 +159,7 @@
         
         <section id="unlock-screen">
             <div id="sparkles-container"></div>
-            <h1 data-aos="zoom-in">Thư mời Lễ Tốt Nghiệp</h1>
+            <h1 data-aos="zoom-in">Thiệp mời Lễ Tốt Nghiệp</h1>
             <div class="nickname" data-aos="zoom-in" data-aos-delay="200">Quýt 🍊</div>
             
             <div class="guest-box" data-aos="fade-up" data-aos-delay="400" style="background:rgba(255,255,255,0.6);backdrop-filter:blur(12px);padding:20px 40px;border-radius:50px;margin:20px 0;">
@@ -178,8 +181,8 @@
                     <p>Đến lúc ngồi viết những dòng này, mình mới nhận ra là quãng đường từ một đứa trẻ vô tư đến ngày sắp mặc lên mình bộ lễ phục tốt nghiệp đã trôi qua nhanh thật.</p>
                     <p>Nhìn lại, mình thấy bản thân đã trải qua đủ mọi cảm xúc. Có những ngày rất vui vì đạt được điều mình mong muốn, nhưng cũng có những lúc mệt mỏi, áp lực, thất bại và không biết mình có đi đúng hướng hay không. Thật may vì trong suốt chặng đường ấy luôn có mọi người ở bên. Có người động viên mình bằng một lời hỏi thăm, có người lắng nghe mình than vãn, có người âm thầm dõi theo và luôn tin rằng mình sẽ làm được. Những điều tưởng chừng rất nhỏ ấy lại trở thành động lực rất lớn để mình có thể đi đến ngày hôm nay.</p>
                     <p>Mình thật sự biết ơn vì đã được gặp và đồng hành cùng những người tuyệt vời như mọi người. Cảm ơn vì đã cùng mình đi qua những lúc vui, lúc buồn, những lần thành công và cả những lần vấp ngã. Mỗi người đều đã để lại một dấu ấn rất đẹp trong hành trình trưởng thành của mình.</p>
-					<p>Và giờ đây, khi chuẩn bị khép lại một chặng đường đáng nhớ, mình rất mong mọi người có thể dành chút thời gian đến dự lễ tốt nghiệp của mình. Sự có mặt của mọi người sẽ là niềm vui và là món quà ý nghĩa nhất đối với mình trong ngày đặc biệt này.<p>
-				</div>
+                    <p>Và giờ đây, khi chuẩn bị khép lại một chặng đường đáng nhớ, mình rất mong mọi người có thể dành chút thời gian đến dự lễ tốt nghiệp của mình. Sự có mặt của mọi người sẽ là niềm vui và là món quà ý nghĩa nhất đối với mình trong ngày đặc biệt này.</p>
+                </div>
                 <div style="text-align:right;margin-top:40px;font-family:'Pacifico',cursive;font-size:2.3rem;color:#ff7e5f;">Dương Bá Quyết 🍊</div>
             </div>
             
@@ -192,70 +195,52 @@
             
             <div class="timeline-wrapper">
                 
+                <!-- Khung 1: Tiểu học -->
                 <div class="polaroid" data-aos="fade-up" data-aos-delay="0">
                     <div class="polaroid-img-wrapper" onclick="swapImage(this)">
                         <div class="tap-hint"><i class="fa-solid fa-hand-pointer"></i> Bấm đổi ảnh</div>
-                        <img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?w=500" 
-                             data-images='["https://images.unsplash.com/photo-1519689680058-324335c77eba?w=500", "https://images.unsplash.com/photo-1471286174890-9c112ffca5b4?w=500"]' 
+						<img src="nhỏ 5.JPG"
+                             data-images='["nhỏ 1.JPG", "nhỏ 2.JPG","nhỏ 3.JPG","nhỏ 4.JPG","nhỏ 6.JPG"]' 
                              data-index="0" alt="Bé">
                     </div>
-                    <div class="polaroid-caption">Lém lỉnh</div>
-                    <div class="polaroid-desc">Ngày còn bé xíu, một cậu nhóc ngoan ngoãn nhưng mang đầy sự tò mò với thế giới.</div>
+                    <div class="polaroid-caption">Tuổi thơ lém lỉnh</div>
+                    <div class="polaroid-desc">Ngày còn bé, những năm tháng vô lo vô nghĩ.</div>
                 </div>
 
+                <!-- Khung 2: THCS -->
                 <div class="polaroid" data-aos="fade-up" data-aos-delay="100">
                     <div class="polaroid-img-wrapper" onclick="swapImage(this)">
                         <div class="tap-hint"><i class="fa-solid fa-hand-pointer"></i> Bấm đổi ảnh</div>
-                        <img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?w=500" 
-                             data-images='["https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?w=500", "https://images.unsplash.com/photo-1485546246426-74dc88dec4d9?w=500"]' 
-                             data-index="0" alt="Lớn hơn">
+                        <img src="cấp 2 1.jpg"
+                             data-images='["cấp 2 1.jpg","cấp 2 2.jpg"]' 
+                             data-index="0" alt="Cấp 2">
                     </div>
-                    <div class="polaroid-caption">Vô lo vô nghĩ</div>
-                    <div class="polaroid-desc">Những chuỗi ngày rong chơi bắt dế, tuổi thơ rộn ràng tiếng cười trong trẻo.</div>
+                    <div class="polaroid-caption">THCS Thụy Lâm</div>
+                    <div class="polaroid-desc">Bắt đầu lớn hơn một chút roi.</div>
                 </div>
 
+                <!-- Khung 3: THPT -->
                 <div class="polaroid" data-aos="fade-up" data-aos-delay="200">
                     <div class="polaroid-img-wrapper" onclick="swapImage(this)">
                         <div class="tap-hint"><i class="fa-solid fa-hand-pointer"></i> Bấm đổi ảnh</div>
-                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=500" 
-                             data-images='["https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=500", "https://images.unsplash.com/photo-1577896851231-70ef18881754?w=500"]' 
-                             data-index="0" alt="Sân cỏ">
+                        <img src="cấp 3 2.jpg" 
+                             data-images='["cấp 3 1.jpg", "cấp 3 3.jpg", "cấp 3 4.png" ]' 
+                             data-index="0" alt="Cấp 3">
                     </div>
-                    <div class="polaroid-caption">Cháy hết mình</div>
-                    <div class="polaroid-desc">Thanh xuân rực rỡ! Những chiều xỏ đôi giày Kamito, bứt tốc trên sân cỏ ở vị trí tiền đạo.</div>
+                    <div class="polaroid-caption">Cấp 3</div>
+                    <div class="polaroid-desc">Những năm tháng tại THPT Liên Hà (Lớp A1.2) cùng những người bạn tuyệt vời nhất quả đất.</div>
                 </div>
 
+                <!-- Khung 4: Đại học -->
                 <div class="polaroid" data-aos="fade-up" data-aos-delay="300">
                     <div class="polaroid-img-wrapper" onclick="swapImage(this)">
                         <div class="tap-hint"><i class="fa-solid fa-hand-pointer"></i> Bấm đổi ảnh</div>
-                        <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=500" 
-                             data-images='["https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=500", "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500"]' 
-                             data-index="0" alt="Bạn bè">
+                        <img src="đại học 9.JPG"
+                             data-images='["đại học 1.jpeg", "đại học 2.jpg", "đại học 3.JPG","đại học 4.JPG","đại học 5.jpg", "đại học 6.JPG","đại học 7.JPG", "đại học 8.JPG", "đại học 9.JPG"]' 
+                             data-index="0" alt="Đại học">
                     </div>
-                    <div class="polaroid-caption">Đam mê gõ cửa</div>
-                    <div class="polaroid-desc">Bắt đầu tập tành với Ubuntu, những dòng code đầu tiên, mở ra một thế giới công nghệ vô tận.</div>
-                </div>
-
-                <div class="polaroid" data-aos="fade-up" data-aos-delay="400">
-                    <div class="polaroid-img-wrapper" onclick="swapImage(this)">
-                        <div class="tap-hint"><i class="fa-solid fa-hand-pointer"></i> Bấm đổi ảnh</div>
-                        <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=500" 
-                             data-images='["https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=500", "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=500"]' 
-                             data-index="0" alt="Thuyết trình">
-                    </div>
-                    <div class="polaroid-caption">Vượt chướng ngại vật</div>
-                    <div class="polaroid-desc">Những đêm thức trắng bên mỏ hàn, căng mắt debug mạch ESP32 cho đồ án IoT. Gian nan nhưng vô giá.</div>
-                </div>
-
-                <div class="polaroid" data-aos="fade-up" data-aos-delay="500">
-                    <div class="polaroid-img-wrapper" onclick="swapImage(this)">
-                        <div class="tap-hint"><i class="fa-solid fa-hand-pointer"></i> Bấm đổi ảnh</div>
-                        <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=500" 
-                             data-images='["https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=500", "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=500"]' 
-                             data-index="0" alt="Tốt nghiệp">
-                    </div>
-                    <div class="polaroid-caption">Hoàn thành xuất sắc</div>
-                    <div class="polaroid-desc">Giây phút tự hào nhất! Chính thức "deploy" thành công phiên bản hoàn thiện của Cử nhân Quýt.</div>
+                    <div class="polaroid-caption">K67 EEI - HUS</div>
+                    <div class="polaroid-desc">Qúa nhiều kỉ niệm, quá nhiều niềm vui và nỗi buồn. Cảm ơn vì tất cả.</div>
                 </div>
 
             </div>
@@ -288,12 +273,12 @@
             <div class="rsvp-form-container" id="form-box" data-aos="zoom-in">
                 <h2 style="color: white; font-size: 2.2rem; margin-top: 0;">Xác Nhận Tham Dự</h2>
                 <p style="font-size: 0.95rem; color: rgba(255,255,255,0.9); margin-bottom: 30px;">
-                    Hãy cho Quýt biết trạng thái của bạn để chuẩn bị đón tiếp thật chu đáo nhé!
+                    Hãy cho tớ biết trạng thái của cậu để chuẩn bị đón tiếp thật chu đáo nhé!
                 </p>
                 <form id="contact-form">
                     <div class="input-group">
                         <input type="text" name="name" id="name" placeholder="Tên" required>
-                        <label>Tên của bạn</label>
+                        <label>Tên của cậu là</label>
                     </div>
                     <div class="input-group">
                         <input type="email" name="email" id="email" placeholder="Email" required>
@@ -309,17 +294,26 @@
                     </div>
                     <div class="input-group">
                         <textarea name="message" id="message" rows="2" placeholder="Lời nhắn"></textarea>
-                        <label>Lời chúc gửi đến Quýt (Không bắt buộc)</label>
+                        <label>Cậu có gì muốn nói với tớ khong (Không bắt buộc)</label>
                     </div>
                     <button type="submit" class="btn-submit" id="submit-btn">Gửi Xác Nhận <i class="fa-solid fa-paper-plane"></i></button>
                 </form>
             </div>
 
+            <!-- THẺ VIP (NẾU ĐỒNG Ý) -->
             <div id="vip-ticket" class="rsvp-form-container">
                 <h2 style="color: #8b0000; font-family: 'Playfair Display', serif; margin-top: 0;"><i class="fa-solid fa-crown"></i> VÉ VIP <i class="fa-solid fa-crown"></i></h2>
                 <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #8b0000;">Cảm ơn bạn rất nhiều! 🍊</h3>
                 <p style="font-size: 1.1rem; color: #333; font-weight: 600;">Chỗ ngồi hàng đầu đã được giữ! Hãy kiểm tra hòm thư email nhé.</p>
                 <p style="font-size: 1.5rem; margin-top: 20px; color: #8b0000;">Hẹn sớm gặp lại! ❤️</p>
+            </div>
+
+            <!-- THƯ THÔNG CẢM (NẾU BẬN) -->
+            <div id="busy-ticket" class="rsvp-form-container">
+                <h2 style="color: #ff7e5f; font-family: 'Playfair Display', serif; margin-top: 0;"><i class="fa-solid fa-envelope-open-text"></i> THƯ HỒI ĐÁP <i class="fa-solid fa-envelope-open-text"></i></h2>
+                <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #ff7e5f;">Tiếc quá đi mấtt! 🍊</h3>
+                <p style="font-size: 1.1rem; color: #555; font-weight: 600;">Tớ đã nhận được phản hồi từ bạn. Rất tiếc vì bạn không thể sắp xếp đến chung vui trong ngày hôm đó.</p>
+                <p style="font-size: 1.1rem; color: #555; font-weight: 600;">Nhưng khong sao đâu, tớ vẫn luôn trân trọng tình cảm của cậu. Hẹn dịp gần nhất tụi mình cùng đi cafe bù nhé! ❤️</p>
             </div>
         </section>
 
@@ -356,24 +350,19 @@
 
         // 3.1. HÀM ĐỔI ẢNH KHI BẤM VÀO POLAROID
         function swapImage(wrapperElement) {
-            // Lấy thẻ img nằm bên trong khung vừa bấm
             let imgElement = wrapperElement.querySelector('img');
-            
-            // Lấy mảng ảnh từ thuộc tính data-images
             let images = JSON.parse(imgElement.getAttribute('data-images'));
-            if(images.length <= 1) return; // Nếu chỉ có 1 ảnh thì không cần đổi
+            if(images.length <= 1) return; 
             
-            // Tính toán index ảnh tiếp theo
             let currentIndex = parseInt(imgElement.getAttribute('data-index'));
             let nextIndex = (currentIndex + 1) % images.length;
             
-            // Hiệu ứng mờ nhẹ đi -> đổi ảnh -> sáng lại
             imgElement.style.opacity = 0;
             setTimeout(() => {
                 imgElement.src = images[nextIndex];
                 imgElement.setAttribute('data-index', nextIndex);
                 imgElement.style.opacity = 1;
-            }, 300); // 300 mili-giây
+            }, 300); 
         }
 
         // 4. HỆ THỐNG ÂM NHẠC TỪ FILE TRONG MÁY
@@ -435,7 +424,7 @@
             "quyet@duongba:~$ ./build_life_journey.sh",
             "[ OK ] Loading module: Tieu_Hoc_Xuan_Non.sys... Success",
             "[ OK ] Mounting volume: THCS_Thuy_Lam/Memories... Mounted",
-            "[ OK ] Decrypting database: THPT_Lien_Ha_Class_A1.2... Verified",
+            "[ OK ] Decrypting database: THPT_Lien_Ha_A1.2... Verified",
             "[ OK ] Initializing core: HUS_K67_EEI (Electronic Engineering and Informatics)... Online",
             "[ OK ] Compiling: Quyet_Bachelor_Release.cpp... Done (0 errors, 0 warnings)",
             "System Ready. Welcome to the new chapter!"
@@ -485,16 +474,49 @@
             setTimeout(() => heart.remove(), 2800);
         }
 
-        // 8. EMAILJS GỬI FORM
+        // 8. EMAILJS GỬI FORM (ĐÃ XỬ LÝ LOGIC VIP / BUSY BẰNG TEMPLATE ID MỚI)
         emailjs.init('hzEa2kfHt6Y3hIdSL');
         document.getElementById('contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            const btn = document.getElementById('submit-btn'); btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Đang gửi...';
-            const templateParams = { name: document.getElementById('name').value, email: document.getElementById('email').value, status: document.getElementById('status').value, message: document.getElementById('message').value || 'Không có lời nhắn', title: 'Khách mới xác nhận' };
-            emailjs.send('service_3urww2b', 'template_dsvg5qp', templateParams).then(function() {
-                document.getElementById('form-box').style.display = 'none'; document.getElementById('vip-ticket').style.display = 'block';
-                confetti({ particleCount: 100, spread: 60, origin: { y: 0.8 }, colors: ['#ffdf00', '#d4af37'] });
-            }, function(error) { btn.innerHTML = 'Lỗi! Thử lại sau'; btn.style.background = '#f44336'; console.log('Lỗi EmailJS:', error); });
+            const btn = document.getElementById('submit-btn'); 
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Đang gửi...';
+            
+            // Lấy trạng thái khách chọn
+            const statusVal = document.getElementById('status').value;
+            
+            const templateParams = { 
+                name: document.getElementById('name').value, 
+                email: document.getElementById('email').value, 
+                status: statusVal, 
+                message: document.getElementById('message').value || 'Không có lời nhắn', 
+                title: 'Khách mới xác nhận' 
+            };
+
+            // Xác định Template ID dựa trên trạng thái tham dự
+            let templateID = 'template_dsvg5qp'; // Mặc định: Đồng ý / Xem xét
+            
+            if (statusVal === 'Không thể tham dự') {
+                templateID = 'template_4u7z31y'; // Template báo bận mới
+            }
+
+            emailjs.send('service_3urww2b', templateID, templateParams).then(function() {
+                // Ẩn form nhập liệu
+                document.getElementById('form-box').style.display = 'none'; 
+                
+                // Kiểm tra trạng thái khách chọn để hiện thẻ phù hợp
+                if (statusVal === 'Không thể tham dự') {
+                    // Hiện thẻ báo bận
+                    document.getElementById('busy-ticket').style.display = 'block';
+                } else {
+                    // Hiện thẻ VIP & Bắn pháo sáng
+                    document.getElementById('vip-ticket').style.display = 'block';
+                    confetti({ particleCount: 100, spread: 60, origin: { y: 0.8 }, colors: ['#ffdf00', '#d4af37'] });
+                }
+            }, function(error) { 
+                btn.innerHTML = 'Lỗi! Thử lại sau'; 
+                btn.style.background = '#f44336'; 
+                console.log('Lỗi EmailJS:', error); 
+            });
         });
     </script>
 </body>
