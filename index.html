@@ -166,8 +166,8 @@
                 scrollbar-width: none; 
                 padding-bottom: 20px; 
                 gap: 30px; /* Tăng khoảng cách để chứa mũi tên */
-                justify-content: flex-start; /* FIX: Ép bắt đầu từ bên trái để không bị cuộn giữa */
-                padding-left: 10%; /* Căn giữa ảnh đầu tiên */
+                justify-content: flex-start; 
+                padding-left: 10%; 
                 padding-right: 10%;
             }
             .timeline-wrapper::-webkit-scrollbar { display: none; }
@@ -177,13 +177,13 @@
                 flex: 0 0 auto; 
                 scroll-snap-align: center; 
                 transform: none !important; 
-                margin-right: 0; /* Đã có gap lo khoảng cách */
+                margin-right: 0; 
             } 
             .polaroid:hover { transform: translateY(-5px) !important; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
             
             /* Bật lại mũi tên ở ảnh số 2 vì trên mobile là cuộn ngang liên tục */
             .polaroid:nth-child(2)::after { display: block; }
-            .polaroid::after { right: -25px; font-size: 1.8rem; } /* Chỉnh lại vị trí mũi tên */
+            .polaroid::after { right: -25px; font-size: 1.8rem; }
 
             .tap-hint { opacity: 1; } 
             .letter-container { padding: 40px 20px; }
@@ -240,7 +240,6 @@
         <section class="timeline-bg" id="timeline-section">
             <h2 data-aos="fade-up" style="font-size: 2.2rem;">Những tấm ảnh lưu trữ cả thanh xuân</h2>
             <p class="section-desc" data-aos="fade-up">Lật giở lại những trang ký ức trưởng thành của mình nhé</p>
-            <p class="section-desc" data-aos="fade-up">Bấm vào từng ảnh để xem thêm nhó</p>
             
             <div class="timeline-wrapper">
                 
@@ -307,11 +306,10 @@
                     <p><i class="fa-solid fa-location-dot"></i> <strong>Hội trường Ngụy Như Kon Tum</strong></p>
                     <p style="padding-left: 35px; font-size: 0.95rem; color: #666; margin-top: -5px;">Số 19 P. Lê Thánh Tông, Phan Chu Trinh, Hoàn Kiếm, Hà Nội</p>
                 </div>
-                
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.168434720914!2d105.85579931540228!3d21.02594618599982!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135abe85b0d0e39%3A0xcbc7291aeb6cde07!2zSOG7mWkgdHLGsOG7nW5nIE5n4buleSBOaMawIEtvbiBUdW0!5e0!3m2!1svi!2s!4v1700000000000!5m2!1svi!2s" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.2373111051515!2d105.85598687611593!3d21.023197687968595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135abec22fbaeb3%3A0xc6657c7f078aab17!2zMTkgUC4gTMOqIFRow6FuaCBUw7RuZywgUGjhuqFuIENodSBUcmluaCwgSG_DoG4gS2nhur9tLCBIw6AgTuG7mWksIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1715410000000!5m2!1svi!2s" allowfullscreen="" loading="lazy"></iframe>
                 <div style="padding: 15px; text-align: center; background: #fdfdfd; border-top: 1px solid #eee;">
-                    <a href="https://www.google.com/maps/search/?api=1&query=Hội+trường+Ngụy+Như+Kon+Tum,+19+Lê+Thánh+Tông,+Hà+Nội" target="_blank" style="display: inline-block; padding: 10px 25px; background: #1e3c72; color: white; text-decoration: none; border-radius: 30px; font-weight: bold; transition: 0.3s; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                    <!-- LINK MỞ APP GOOGLE MAPS ĐÃ FIX -->
+                    <a href="https://maps.google.com/maps?q=19+P.+Lê+Thánh+Tông,+Phan+Chu+Trinh,+Hoàn+Kiếm,+Hà+Nội" target="_blank" style="display: inline-block; padding: 10px 25px; background: #1e3c72; color: white; text-decoration: none; border-radius: 30px; font-weight: bold; transition: 0.3s; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
                         📍 Mở ứng dụng Google Maps
                     </a>
                 </div>
