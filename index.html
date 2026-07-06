@@ -158,15 +158,32 @@
 
         /* ====== RESPONSIVE (MOBILE) ====== */
         @media (max-width: 768px) {
-            .timeline-wrapper { flex-wrap: nowrap; overflow-x: auto; scroll-snap-type: x mandatory; -ms-overflow-style: none; scrollbar-width: none; padding-bottom: 20px; gap: 20px; }
+            .timeline-wrapper { 
+                flex-wrap: nowrap; 
+                overflow-x: auto; 
+                scroll-snap-type: x mandatory; 
+                -ms-overflow-style: none; 
+                scrollbar-width: none; 
+                padding-bottom: 20px; 
+                gap: 30px; /* Tăng khoảng cách để chứa mũi tên */
+                justify-content: flex-start; /* FIX: Ép bắt đầu từ bên trái để không bị cuộn giữa */
+                padding-left: 10%; /* Căn giữa ảnh đầu tiên */
+                padding-right: 10%;
+            }
             .timeline-wrapper::-webkit-scrollbar { display: none; }
-            .polaroid { width: 80%; min-width: 260px; flex: 0 0 auto; scroll-snap-align: center; transform: none !important; margin-right: 25px; } /* Thêm khoảng trống bên phải cho mũi tên */
+            .polaroid { 
+                width: 80%; 
+                min-width: 260px; 
+                flex: 0 0 auto; 
+                scroll-snap-align: center; 
+                transform: none !important; 
+                margin-right: 0; /* Đã có gap lo khoảng cách */
+            } 
             .polaroid:hover { transform: translateY(-5px) !important; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
             
             /* Bật lại mũi tên ở ảnh số 2 vì trên mobile là cuộn ngang liên tục */
             .polaroid:nth-child(2)::after { display: block; }
-            .polaroid::after { right: -28px; font-size: 1.8rem; }
-            .polaroid:last-child { margin-right: 0; }
+            .polaroid::after { right: -25px; font-size: 1.8rem; } /* Chỉnh lại vị trí mũi tên */
 
             .tap-hint { opacity: 1; } 
             .letter-container { padding: 40px 20px; }
@@ -223,6 +240,7 @@
         <section class="timeline-bg" id="timeline-section">
             <h2 data-aos="fade-up" style="font-size: 2.2rem;">Những tấm ảnh lưu trữ cả thanh xuân</h2>
             <p class="section-desc" data-aos="fade-up">Lật giở lại những trang ký ức trưởng thành của mình nhé</p>
+            <p class="section-desc" data-aos="fade-up">Bấm vào từng ảnh để xem thêm nhó</p>
             
             <div class="timeline-wrapper">
                 
@@ -254,7 +272,7 @@
                 <div class="polaroid" data-aos="fade-up" data-aos-delay="200">
                     <div class="polaroid-img-wrapper" onclick="swapImage(this)">
                         <div class="tap-hint"><i class="fa-solid fa-hand-pointer"></i> Bấm đổi ảnh</div>
-                        <img src="cấp 3 5.jpg"
+                        <img src="cấp 3 5.jpg" 
                              data-images='["cấp 3 1.jpg", "cấp 3 3.jpg", "cấp 3 4.png", "cấp 3 2.jpg", "cấp 3 6.jpg" ]' 
                              data-index="0" alt="Cấp 3">
                     </div>
@@ -471,7 +489,7 @@
                 p.innerText = log;
                 logsContainer.appendChild(p);
             }, delay); 
-            delay += 1000; 
+            delay += 800; 
         });
         
         setTimeout(() => {
