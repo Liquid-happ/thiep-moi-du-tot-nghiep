@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title> Thiệp Mời Lễ Tốt Nghiệp | Quýt 🍊</title>
+    <title> Thư Mời Lễ Tốt Nghiệp | Quýt 🍊</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;600&family=Pacifico&display=swap" rel="stylesheet">
@@ -240,7 +240,7 @@
         <section class="timeline-bg" id="timeline-section">
             <h2 data-aos="fade-up" style="font-size: 2.2rem;">Những tấm ảnh lưu trữ cả thanh xuân</h2>
             <p class="section-desc" data-aos="fade-up">Lật giở lại những trang ký ức trưởng thành của mình nhé</p>
-			<p class="section-desc" data-aos="fade-up">Bấm vào từng ảnh để xem thêm nhaa</p>
+            <p class="section-desc" data-aos="fade-up" style="margin-top:-20px;">Bấm vào từng ảnh để xem thêm nhaa</p>
             
             <div class="timeline-wrapper">
                 
@@ -285,7 +285,7 @@
                     <div class="polaroid-img-wrapper" onclick="swapImage(this)">
                         <div class="tap-hint"><i class="fa-solid fa-hand-pointer"></i> Bấm đổi ảnh</div>
                         <img src="đại học 9.JPG"
-                             data-images='[ "đại học 2.jpg","đại học 1.jpeg", "đại học 3.JPG","đại học 4.JPG","đại học 5.jpg", "đại học 6.JPG","đại học 7.JPG", "đại học 8.JPG", "đại học 9.JPG"]' 
+                             data-images='["đại học 2.jpg","đại học 1.jpeg", "đại học 3.JPG","đại học 4.JPG","đại học 5.jpg", "đại học 6.JPG","đại học 7.JPG", "đại học 8.JPG", "đại học 9.JPG"]' 
                              data-index="0" alt="Đại học">
                     </div>
                     <div class="polaroid-caption">K67 EEI - HUS</div>
@@ -303,7 +303,7 @@
             
             <div class="location-card">
                 <div class="location-info">
-                    <p><i class="fa-regular fa-clock"></i> <strong>13:30 Chiều, Thứ Bảy, Ngày 11/07/2026</strong></p>
+                    <p><i class="fa-regular fa-clock"></i> <strong>15:00 Chiều, Thứ Bảy, Ngày 11/07/2026</strong></p>
                     <p><i class="fa-solid fa-location-dot"></i> <strong>Hội trường Ngụy Như Kon Tum</strong></p>
                     <p style="padding-left: 35px; font-size: 0.95rem; color: #666; margin-top: -5px;">Số 19 P. Lê Thánh Tông, Phan Chu Trinh, Hoàn Kiếm, Hà Nội</p>
                 </div>
@@ -502,8 +502,8 @@
             }, 500);
         }, delay + 800);
 
-        // 6. ĐẾM NGƯỢC 13:30
-        const countDownDate = new Date("Jul 11, 2026 13:30:00").getTime();
+        // 6. ĐẾM NGƯỢC 15:00
+        const countDownDate = new Date("Jul 11, 2026 15:00:00").getTime();
         setInterval(function() {
             const now = new Date().getTime(); const distance = countDownDate - now;
             if (distance < 0) { document.getElementById("countdown").innerHTML = "<div style='font-size: 1.8rem; color: #ff7e5f; font-weight: bold;'>Sự kiện đang diễn ra! 🎉</div>"; return; }
